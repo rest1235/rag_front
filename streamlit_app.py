@@ -1,9 +1,9 @@
+import os
 import streamlit as st
 import requests
 
-API_URL = st.secrets.get("API_URL")
-API_KEY = st.secrets.get("APP_API_KEY")
-
+API_URL = os.getenv("API_URL")
+API_KEY = os.getenv("APP_API_KEY", "")
 HEADERS = {"x-api-key": API_KEY}
 
 st.set_page_config(
